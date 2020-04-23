@@ -203,11 +203,9 @@
             <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row">
-                    <div class="col-3 align-self-center">
-                        <h4 class="page-title">Danh sách sản phẩm</h4>
-
+                    <div class="col-5 align-self-center">
+                        <h4 class="page-title">Dashboard</h4>
                     </div>
-                   <a class="btn btn-danger col-2" href="add_product.html">Add sản phẩm</a>
                     <div class="col-7 align-self-center">
                         <div class="d-flex align-items-center justify-content-end">
                             <nav aria-label="breadcrumb">
@@ -215,7 +213,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="#">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Danh sách sản phẩm</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
@@ -232,37 +230,58 @@
                 <!-- ============================================================== -->
                 <!-- Email campaign chart -->
                 <!-- ============================================================== -->
-          <div class="table-responsive">
-                                <table class="table">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th scope="col">id</th>
-                                            <th scope="col">Tên sản phẩm </th>
-                                            <th scope="col">Images</th>
-                                            <th scope="col">Sale</th>
-                                            <th scope="col">Số lượng</th>
-                                            <th scope="col">Danh mục</th>
-                                            <th scope="col">Chức năng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="list_data">
-                                    <!--     <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>
-                                                <button type="button" class="btn btn-warning">Xóa</button>
-                                                <button type="button" class="btn btn-success">Sửa</button>
-                                            </td>
-
-                                        </tr> -->
-                                   
-                                    </tbody>
-                                </table>
-                            </div>
+          <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Danh mục</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Danh mục 1</option>
+                          <option>Danh mục 2</option>
+                          <option>Danh mục 3</option>
+                          <option>Danh mục 4</option>
+                          <option>Danh mục 5</option>
+                        </select>
+                      </div>
+                    <div class="form-group">
+                <label for="exampleInputEmail1">Tên Sản Phẩm</label>
+                <input type="text" class="form-control" id="exampleInputEmail1">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh Sản Phẩm</label>
+                <input type="file" class="form-control" id="exampleInputPassword1">
+              </div>
+              <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Ảnh Sản Phẩm Phụ</label>
+                <input type="file" class="form-control" id="" multiple="3">
+              </div> -->
+              <div class="form-group">
+                <label for="exampleInputPassword1">Giá Tiền</label>
+                <input type="text" class="form-control" id="" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Giảm Giá</label>
+                <input type="text" class="form-control" id="">
+              </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="form-group">
+                <label for="exampleInputPassword1">Số Lượng</label>
+                <input type="text" class="form-control" id="" >
+              </div>
+              <div class="form-group">
+    <label for="exampleFormControlTextarea1">Chi tiết sản phẩm</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+                <label for="exampleInputPassword1">Số View</label>
+                <input type="text" class="form-control" id="" >
+              </div>
+                </div>
+            </div>
+              
+              <button type="submit" class="btn btn-primary float-right">Sửa Sản Phẩm</button>
+            </form>
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
                 <!-- ============================================================== -->
@@ -312,46 +331,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script>
-        var url = "http://localhost:3000/products"
-        var htmldata=""
-        axios.get(url)
-          .then(function (response) {
-            var htmldata=""
-            var listdata = response.data
-            console.log(listdata[0].name_product)
-            listdata.forEach(elements=>{
-                 htmldata+=`
-                <tr>
-                    <th scope="row">${elements.id}</th>
-                    <td>${elements.name_product}</td>
-                    <td><img src="${elements.images}" width="200px"></td>
-                    <td>${elements.price}</td>
-                    <td>${elements.amount}</td>
-                    <td>${elements.categoryId}</td>
-                    <td>
-                        <button type="button" class="btn btn-warning " onclick="xoaSp(this,${elements.id})">Xóa</button>
-                        <a href="edit_product.html?id=${elements.id}" class="btn btn-success">Sửa</a>
-                       
-                    </td>
-
-                </tr>`
-            })
-            document.querySelector("#list_data").innerHTML=htmldata
-
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-
-
-          function xoaSp(elements,id){
-            var deleteUrl =url+"/"+id
-            axios.delete(deleteUrl,[
-                elements.parentElement.parentElement.remove()
-            ])
-          }
-    </script>
 </body>
 
 </html>
