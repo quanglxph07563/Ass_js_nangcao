@@ -1,21 +1,378 @@
 {
+  "products": [
+  {
+    "id": "1",
+    "categoryId": "1",
+    "name_product": "Intelligent Wooden Chair",
+    "images": "http://lorempixel.com/640/480/abstract",
+    "list_images": [],
+    "price": "725.00",
+    "sale": "795.00",
+    "amount": 77,
+    "detail": "detail 1",
+    "view": 83
+  },
+  {
+    "id": "2",
+    "categoryId": "2",
+    "name_product": "Tasty Concrete Bacon",
+    "images": "http://lorempixel.com/640/480/people",
+    "list_images": [],
+    "price": "367.00",
+    "sale": "82.00",
+    "amount": 15,
+    "detail": "detail 2",
+    "view": 71
+  },
+  {
+    "id": "3",
+    "categoryId": "3",
+    "name_product": "Incredible Steel Fish",
+    "images": "http://lorempixel.com/640/480/technics",
+    "list_images": [],
+    "price": "417.00",
+    "sale": "593.00",
+    "amount": 84,
+    "detail": "detail 3",
+    "view": 97
+  },
+  {
+    "id": "4",
+    "categoryId": "4",
+    "name_product": "Ergonomic Soft Sausages",
+    "images": "http://lorempixel.com/640/480/technics",
+    "list_images": [],
+    "price": "630.00",
+    "sale": "16.00",
+    "amount": 75,
+    "detail": "detail 4",
+    "view": 40
+  },
+  {
+    "id": "5",
+    "categoryId": "5",
+    "name_product": "Incredible Concrete Chair",
+    "images": "http://lorempixel.com/640/480/city",
+    "list_images": [],
+    "price": "47.00",
+    "sale": "196.00",
+    "amount": 46,
+    "detail": "detail 5",
+    "view": 30
+  },
+  {
+    "id": "6",
+    "categoryId": "6",
+    "name_product": "Ergonomic Cotton Chicken",
+    "images": "http://lorempixel.com/640/480/animals",
+    "list_images": [],
+    "price": "369.00",
+    "sale": "679.00",
+    "amount": 20,
+    "detail": "detail 6",
+    "view": 66
+  },
+  {
+    "id": "7",
+    "categoryId": "7",
+    "name_product": "Generic Wooden Cheese",
+    "images": "http://lorempixel.com/640/480/animals",
+    "list_images": [],
+    "price": "76.00",
+    "sale": "693.00",
+    "amount": 21,
+    "detail": "detail 7",
+    "view": 89
+  },
+  {
+    "id": "8",
+    "categoryId": "8",
+    "name_product": "Tasty Granite Pizza",
+    "images": "http://lorempixel.com/640/480/technics",
+    "list_images": [],
+    "price": "897.00",
+    "sale": "646.00",
+    "amount": 13,
+    "detail": "detail 8",
+    "view": 13
+  },
+  {
+    "id": "9",
+    "categoryId": "9",
+    "name_product": "Generic Wooden Fish",
+    "images": "http://lorempixel.com/640/480/technics",
+    "list_images": [],
+    "price": "434.00",
+    "sale": "4.00",
+    "amount": 15,
+    "detail": "detail 9",
+    "view": 99
+  },
+  {
+    "id": "10",
+    "categoryId": "10",
+    "name_product": "Practical Wooden Chicken",
+    "images": "http://lorempixel.com/640/480/people",
+    "list_images": [],
+    "price": "288.00",
+    "sale": "952.00",
+    "amount": 42,
+    "detail": "detail 10",
+    "view": 89
+  },
+  {
+    "id": "11",
+    "categoryId": "1",
+    "name_product": "Rustic Plastic Pants",
+    "images": "http://lorempixel.com/640/480/sports",
+    "list_images": [],
+    "price": "581.00",
+    "sale": "923.00",
+    "amount": 68,
+    "detail": "detail 11",
+    "view": 88
+  },
+  {
+    "id": "12",
+    "categoryId": "2",
+    "name_product": "Ergonomic Cotton Ball",
+    "images": "http://lorempixel.com/640/480/technics",
+    "list_images": [],
+    "price": "222.00",
+    "sale": "954.00",
+    "amount": 42,
+    "detail": "detail 12",
+    "view": 26
+  },
+  {
+    "id": "13",
+    "categoryId": "3",
+    "name_product": "Gorgeous Fresh Mouse",
+    "images": "http://lorempixel.com/640/480/sports",
+    "list_images": [],
+    "price": "578.00",
+    "sale": "907.00",
+    "amount": 92,
+    "detail": "detail 13",
+    "view": 27
+  },
+  {
+    "id": "14",
+    "categoryId": "4",
+    "name_product": "Small Steel Cheese",
+    "images": "http://lorempixel.com/640/480/sports",
+    "list_images": [],
+    "price": "586.00",
+    "sale": "286.00",
+    "amount": 100,
+    "detail": "detail 14",
+    "view": 75
+  },
+  {
+    "id": "15",
+    "categoryId": "5",
+    "name_product": "Fantastic Rubber Ball",
+    "images": "http://lorempixel.com/640/480/food",
+    "list_images": [],
+    "price": "958.00",
+    "sale": "908.00",
+    "amount": 18,
+    "detail": "detail 15",
+    "view": 84
+  },
+  {
+    "id": "16",
+    "categoryId": "6",
+    "name_product": "Generic Concrete Pants",
+    "images": "http://lorempixel.com/640/480/people",
+    "list_images": [],
+    "price": "728.00",
+    "sale": "327.00",
+    "amount": 77,
+    "detail": "detail 16",
+    "view": 3
+  },
+  {
+    "id": "17",
+    "categoryId": "7",
+    "name_product": "Awesome Cotton Gloves",
+    "images": "http://lorempixel.com/640/480/cats",
+    "list_images": [],
+    "price": "240.00",
+    "sale": "590.00",
+    "amount": 39,
+    "detail": "detail 17",
+    "view": 74
+  },
+  {
+    "id": "18",
+    "categoryId": "8",
+    "name_product": "Tasty Soft Gloves",
+    "images": "http://lorempixel.com/640/480/fashion",
+    "list_images": [],
+    "price": "449.00",
+    "sale": "236.00",
+    "amount": 37,
+    "detail": "detail 18",
+    "view": 17
+  },
+  {
+    "id": "19",
+    "categoryId": "9",
+    "name_product": "Gorgeous Plastic Chair",
+    "images": "http://lorempixel.com/640/480/abstract",
+    "list_images": [],
+    "price": "978.00",
+    "sale": "918.00",
+    "amount": 44,
+    "detail": "detail 19",
+    "view": 3
+  },
+  {
+    "id": "20",
+    "categoryId": "10",
+    "name_product": "Tasty Cotton Mouse",
+    "images": "http://lorempixel.com/640/480/nightlife",
+    "list_images": [],
+    "price": "691.00",
+    "sale": "393.00",
+    "amount": 91,
+    "detail": "detail 20",
+    "view": 18
+  }
+],
+  "category": [
+  {
+    "id": "1",
+    "name_category": "Handcrafted Concrete Chips",
+    "images_category": "http://lorempixel.com/640/480/fashion"
+  },
+  {
+    "id": "2",
+    "name_category": "Incredible Plastic Bacon",
+    "images_category": "http://lorempixel.com/640/480/food"
+  },
+  {
+    "id": "3",
+    "name_category": "Ergonomic Soft Ball",
+    "images_category": "http://lorempixel.com/640/480/nature"
+  },
+  {
+    "id": "4",
+    "name_category": "Ergonomic Wooden Soap",
+    "images_category": "http://lorempixel.com/640/480/cats"
+  },
+  {
+    "id": "5",
+    "name_category": "Refined Fresh Tuna",
+    "images_category": "http://lorempixel.com/640/480/abstract"
+  },
+  {
+    "id": "6",
+    "name_category": "Licensed Fresh Cheese",
+    "images_category": "http://lorempixel.com/640/480/fashion"
+  },
+  {
+    "id": "7",
+    "name_category": "Refined Wooden Pants",
+    "images_category": "http://lorempixel.com/640/480/city"
+  },
+  {
+    "id": "8",
+    "name_category": "Licensed Concrete Ball",
+    "images_category": "http://lorempixel.com/640/480/nightlife"
+  },
+  {
+    "id": "9",
+    "name_category": "Generic Plastic Chips",
+    "images_category": "http://lorempixel.com/640/480/fashion"
+  },
+  {
+    "id": "10",
+    "name_category": "Refined Rubber Bike",
+    "images_category": "http://lorempixel.com/640/480/abstract"
+  }
+],
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json-server1", "author1": "typicode1" },
-    { "id": 3, "title": "json-server2", "autho2": "typicode2" },
-    { "id": 4, "title": "json-server3", "author3": "typicode3" }
-  ],
-  
-
-
-
-
-
-
-
-
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  {
+    "id": "1",
+    "images": "http://lorempixel.com/640/480/business",
+    "title": "Small Plastic Cheese",
+    "detail": "Licensed Gloves"
+  },
+  {
+    "id": "2",
+    "images": "http://lorempixel.com/640/480/fashion",
+    "title": "Ergonomic Fresh Towels",
+    "detail": "synthesize Handcrafted Plastic Chicken Savings Account"
+  },
+  {
+    "id": "3",
+    "images": "http://lorempixel.com/640/480/abstract",
+    "title": "Intelligent Concrete Bike",
+    "detail": "Avon mint green"
+  },
+  {
+    "id": "4",
+    "images": "http://lorempixel.com/640/480/sports",
+    "title": "Generic Fresh Fish",
+    "detail": "RAM Cambridgeshire"
+  },
+  {
+    "id": "5",
+    "images": "http://lorempixel.com/640/480/city",
+    "title": "Gorgeous Granite Chicken",
+    "detail": "SMTP"
+  },
+  {
+    "id": "6",
+    "images": "http://lorempixel.com/640/480/fashion",
+    "title": "Intelligent Cotton Salad",
+    "detail": "Borders RSS"
+  }
+],
+  "order":[
+  {
+    "id": "1",
+    "fullname": "Giuseppe Crist IV",
+    "phone": "(362) 061-6262 x80982",
+    "address": "8491 Emory Landing",
+    "email": "Rebeka.Jakubowski@gmail.com",
+    "total_price": "61.00"
+  },
+  {
+    "id": "2",
+    "fullname": "Stan Lebsack",
+    "phone": "(521) 187-9613",
+    "address": "548 Roger Mountain",
+    "email": "Kaylah_Mayert79@gmail.com",
+    "total_price": "72.00"
+  }
+],
+  "order_detail":[
+  {
+    "id": "1",
+    "productsID": 9,
+    "amount": 77,
+    "orderID": 1
+  },
+  {
+    "id": "2",
+    "productsID": 4,
+    "amount": 70,
+    "orderID": 2
+  },
+  {
+    "id": "3",
+    "productsID": 11,
+    "amount": 45,
+    "orderID": 1
+  },
+  {
+    "id": "4",
+    "productsID": 4,
+    "amount": 78,
+    "orderID": 1
+  }
+]
 }
