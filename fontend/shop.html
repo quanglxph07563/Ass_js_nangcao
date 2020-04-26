@@ -39,6 +39,9 @@ URL: https://www.freshdesignweb.com/ustora/
         .product-upper img{
             height: 198px
         }
+        .add_to_cart_button{
+            cursor: pointer;
+        }
         </style>
     </head>
     <body>
@@ -95,7 +98,7 @@ URL: https://www.freshdesignweb.com/ustora/
                         
                         <div class="col-sm-6">
                             <div class="shopping-item">
-                                <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                                <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                             </div>
                         </div>
                     </div>
@@ -118,6 +121,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                 <ul class="nav navbar-nav">
                                     <li ><a href="index.html">Trang chủ</a></li>
                                     <li class="active"><a href="shop.html">Cửa hàng</a></li>
+                                    <li><a href="tintuc.html">Tin tức</a></li>
                                     <!--   <li><a href="single-product.html">Single product</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li> -->
@@ -319,11 +323,11 @@ URL: https://www.freshdesignweb.com/ustora/
                     switch (loai) {
 
                     case 1:
-                    locxapxep("price","asc")
+                    locxapxep("sale","asc")
                     break;
 
                     case 2:
-                    locxapxep("price","desc")
+                    locxapxep("sale","desc")
     
                     break;
                     case 3:
@@ -368,11 +372,11 @@ URL: https://www.freshdesignweb.com/ustora/
                             </div>
                             <h2><a href="single-product.html?id=${elements.id}">${elements.name_product}</a></h2>
                             <div class="product-carousel-price">
-                                <ins>$${elements.price}</ins> <del>$${elements.sale}</del>
+                                <ins>$${elements.sale}</ins> <del>$${elements.price}</del>
                             </div>
                             
                             <div class="product-option-shop">
-                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" onclick="addCart('${elements.id}',1)">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -382,5 +386,8 @@ URL: https://www.freshdesignweb.com/ustora/
                      document.querySelector("#list_sanpham").innerHTML=htmldata
                     }
                     </script>
+                       <!--  start add san pham vao gio hang -->
+                    <script src="./js/add_sp.js"></script>
+                    <!--  end add san pham vao gio hang -->
                 </body>
             </html>

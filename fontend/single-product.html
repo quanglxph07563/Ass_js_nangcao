@@ -89,7 +89,7 @@
                 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="cart.html">Cart  <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                     </div>
                 </div>
             </div>
@@ -223,12 +223,12 @@
                                         <ins>$700.00</ins> <del>$100.00</del>
                                     </div>    
                                     
-                                    <form action="" class="cart">
+                                    <div action="" class="cart">
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                            <input type="number" size="4" id="sl" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                         </div>
                                         <button class="add_to_cart_button" type="submit">Add to cart</button>
-                                    </form>   
+                                    </div>   
                                     
                                     <div class="product-inner-category">
                                         <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
@@ -466,6 +466,7 @@
     
     <!-- Main Script -->
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         var url_string = window.location.href;
@@ -490,5 +491,13 @@
         // always executed
         });
     </script>
+    <script type="text/javascript">
+        document.querySelector(".add_to_cart_button").onclick= function(){
+            var sl = Number(document.querySelector("#sl").value)
+            console.log(typeof sl)
+            addCart(id,sl)
+        }
+    </script>
+      <script src="./js/add_sp.js"></script>
   </body>
 </html>
