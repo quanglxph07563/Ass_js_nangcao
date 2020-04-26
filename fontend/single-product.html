@@ -109,13 +109,13 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">Shop page</a></li>
-                        <li class="active"><a href="single-product.html">Single product</a></li>
+                      <li ><a href="index.html">Trang chủ</a></li>
+                        <li class="active"><a href="shop.html">Cửa hàng</a></li>
+                      <!--   <li><a href="single-product.html">Single product</a></li>
                         <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="checkout.html">Checkout</a></li> -->
+                        <!-- <li><a href="#">Category</a></li> -->
+                        <!-- <li><a href="#">Others</a></li> -->
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>  
@@ -236,15 +236,14 @@
                                     
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Chi Tiết Sản Phẩm</a></li>
                                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h2>Product Description</h2>  
+                                                <h2>Thông Tin Sản Phẩm</h2>  
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
 
-                                                <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Reviews</h2>
@@ -467,5 +466,29 @@
     
     <!-- Main Script -->
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var id = url.searchParams.get("id");
+        var url_get_info_API = "http://localhost:3000/products"+"/"+id
+        axios.get(url_get_info_API)
+        .then(function (response) {
+        datasp = response.data
+        console.log(datasp);
+        document.querySelector(".product-name").innerHTML= datasp.name_product
+        document.querySelector(".product-inner-price ins").innerHTML= datasp.price
+        document.querySelector(".product-inner-price del").innerHTML= datasp.sale
+        document.querySelector(".product-main-img img").src= datasp.images
+        document.querySelector("#home p").innerHTML= datasp.detail
+        })
+        .catch(function (error) {
+        // handle error
+        console.log(error);
+        })
+        .then(function () {
+        // always executed
+        });
+    </script>
   </body>
 </html>
