@@ -310,25 +310,44 @@
     <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="./dist/js/pages/dashboards/dashboard1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script>
-        var url = "http://localhost:3000/products"
+        
+        // get data danh mục
+        var urldm = "http://localhost:3000/category"
+        var listdatadm=""
+        axios.get(urldm)
+          .then(function (response) {
+            listdatadm = response.data
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        // get data sản phảma
+        var url = "http://localhost:3000/products?_sort=id&_order=desc"
         var htmldata=""
         axios.get(url)
           .then(function (response) {
             var htmldata=""
             var listdata = response.data
-            console.log(listdata[0].name_product)
             listdata.forEach(elements=>{
+                listdatadm.forEach(elements1=>{
+                    if(elements.categoryId==elements1.id){
+                        elements.name_category=elements1.name_category
+                    }
+                })
+            })
+            listdata.forEach(elements=>{
+                var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
                  htmldata+=`
                 <tr>
                     <th scope="row">${elements.id}</th>
                     <td>${elements.name_product}</td>
                     <td><img src="${elements.images}" width="200px"></td>
-                    <td>${elements.price}</td>
+                    <td>${sale}</td>
                     <td>${elements.amount}</td>
-                    <td>${elements.categoryId}</td>
+                    <td>${elements.name_category}</td>
                     <td>
                         <button type="button" class="btn btn-warning " onclick="xoaSp(this,'${elements.id}')">Xóa</button>
                         <a href="edit_product.html?id=${elements.id}" class="btn btn-success">Sửa</a>
@@ -346,11 +365,54 @@
 
 
           function xoaSp(elements,id){
-            var deleteUrl =url+"/"+id
-            axios.delete(deleteUrl,[
+            var deleteUrl ="http://localhost:3000/products/"+id
+            Swal.fire({
+              title: 'Bạn chắc chắn muốn xóa?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.value) {
+                axios.delete(deleteUrl,[
                 elements.parentElement.parentElement.remove()
-            ])
+                ])
+                Swal.fire({
+                  position: 'bottom-end',
+                  icon: 'success',
+                  title: 'Xóa sản phẩm thành công',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            })
+            
           }
+          // xử lý thành công
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var msgcn = url.searchParams.get("msgcn");
+        var msgadd = url.searchParams.get("msgadd");
+        if(msgcn){
+            Swal.fire({
+                  position: 'bottom-end',
+                  icon: 'success',
+                  title: 'Cập nhật sản phẩm thành công',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
+        }
+        if(msgadd){
+            Swal.fire({
+                  position: 'bottom-end',
+                  icon: 'success',
+                  title: 'Thêm sản phẩm thành công',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
+        }
     </script>
 </body>
 

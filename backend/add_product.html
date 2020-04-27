@@ -20,6 +20,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style type="text/css">
+            #show_images{
+                margin-bottom: 20px
+            }
+        </style>
     </head>
     <body>
         <!-- ============================================================== -->
@@ -228,7 +233,7 @@
                     <!-- ============================================================== -->
                     <!-- Email campaign chart -->
                     <!-- ============================================================== -->
-                    <form>
+                
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -240,10 +245,15 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên Sản Phẩm</label>
                                     <input type="text" class="form-control" id="name_product">
+                                    <span  class="error" style="color: red"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Linh Ảnh Sản Phẩm</label>
-                                    <input type="text" class="form-control" id="images">
+                                    <label for="exampleInputPassword1"> Ảnh Sản Phẩm</label>
+                                    <input type="file" onchange="loadImageFileAsURL();" class="form-control" id="images">
+                                    <span class="error" style="color: red"></span>
+                                </div>
+                                <div id="show_images" class="col-md-3">
+                                    <img width="100%" src="">
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="exampleInputPassword1">Ảnh Sản Phẩm Phụ</label>
@@ -251,22 +261,26 @@
                                 </div> -->
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Giá Tiền</label>
-                                    <input type="text" class="form-control" id="price" >
+                                    <input type="number" min="0" class="form-control" id="price" >
+                                    <span class="error" style="color: red"></span>
                                 </div>
                                 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Giảm Giá</label>
-                                    <input type="text" class="form-control" id="sale">
+                                    <input type="number" min="0" class="form-control" id="sale">
+                                    <span class="error" style="color: red"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Số Lượng</label>
-                                    <input type="text" class="form-control" id="amount" >
+                                    <input type="number" class="form-control" id="amount" >
+                                    <span class="error" style="color: red"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Chi tiết sản phẩm</label>
                                     <textarea class="form-control" id="detail" rows="5"></textarea>
+                                    <span class="error" style="color: red"></span>
                                 </div>
                                 <!--   <div class="form-group">
                                     <label for="exampleInputPassword1">Số View</label>
@@ -276,7 +290,7 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary float-right" id="addsp">Thêm Sản Phẩm</button>
-                    </form>
+              
                     <!-- ============================================================== -->
                     <!-- Recent comment and chats -->
                     <!-- ============================================================== -->
@@ -325,38 +339,92 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="">
-        // xử lý thêm sản phẩm
+        // xư lý images->base64
+        function loadImageFileAsURL(){
+        var filesSelected = document.getElementById("images").files;
+        if (filesSelected.length > 0){
+        var fileToLoad = filesSelected[0];
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+        document.querySelector("#show_images img").src=srcData
+        }
+        fileReader.readAsDataURL(fileToLoad);
+        }
+        }
+
+        var categoryId =document.querySelector("#categoryId")
+        var name_product =document.querySelector("#name_product")
+        var images =document.querySelector("#images")
+        var price =document.querySelector("#price")
+        var sale =document.querySelector("#sale")
+        var amount =document.querySelector("#amount")
+        var detail =document.querySelector("#detail")
+        var show_images= document.querySelector("#show_images img")
+
+        // check form
         var addsp = document.querySelector("#addsp")
         var url_POST_API_PRODUCTS = "http://localhost:3000/products"
         addsp.onclick= function(){
+        var listerror = document.getElementsByClassName("error")
+
+        for(let k = 0; k < listerror.length; k++){
+            listerror[k].innerHTML=""
+        }
+
+        if(name_product.value.length<5 || name_product.value.length>30){
+            name_product.nextElementSibling.innerHTML="Tên sản phẩm phải từ 5 đến 30 kí tự"
         
-        var categoryId =document.querySelector("#categoryId").value
-        var name_product =document.querySelector("#name_product").value
-        var images =document.querySelector("#images").value
-        var price =document.querySelector("#price").value
-        var sale =document.querySelector("#sale").value
-        var amount =document.querySelector("#amount").value
-        var detail =document.querySelector("#detail").value
+        }else if(images.value==""){
+            images.nextElementSibling.innerHTML="Vui lòng chọn ảnh"
+
+        }else if(!images.files[0].name.match(/.(jpg|jpeg|png|gif)$/i)) {
+            images.nextElementSibling.innerHTML="Sai định dạng ảnh"
+      
+        }else if(price.value=="") {
+            price.nextElementSibling.innerHTML="Giá tiền không được để rỗng"
+     
+        }else if(sale.value==""){
+            sale.nextElementSibling.innerHTML="Giá sale không được để rỗng"
+
+        }else if(Number(sale.value) > Number(price.value)){
+            sale.nextElementSibling.innerHTML="Giá sale không được lớn hơn giá gốc"
+
+        }else if(amount.value==""){
+            amount.nextElementSibling.innerHTML="Số lượng không được để rỗng"
+
+        }else if(detail.value==""){
+            detail.nextElementSibling.innerHTML="Vui lòng nhập chi tiết sản phẩm"
+        }else {
+            addSp()
+        }
+
+         // addSp()
+     
+        }
+
+
+        // xử lý têm sản phẩm
+        function addSp(){
         var datasp={
-        categoryId:Number(categoryId),
-        name_product:name_product,
-        images:images,
+        categoryId:Number(categoryId.value),
+        name_product:name_product.value,
+        images:show_images.src,
         list_images:[],
-        price:Number(price),
-        sale:Number(sale),
-        amount:Number(amount),
-        detail:detail,
+        price:Number(price.value),
+        sale:Number(sale.value),
+        amount:Number(amount.value),
+        detail:detail.value,
         view:0
         }
         // console.log(JSON.stringify(datasp))
         axios.post(url_POST_API_PRODUCTS,datasp)
         .then(data => {
-        window.location.href="index.html"
+        window.location.href="index.html?msgadd=success"
         })
         .catch(function (error) {
         console.log(error);
         });
-        return false
         }
         // lấy danh sách danh mục
         var url_GET_API_category = "http://localhost:3000/category"
