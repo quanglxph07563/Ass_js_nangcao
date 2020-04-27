@@ -32,11 +32,11 @@ URL: https://www.freshdesignweb.com/ustora/
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-       <style type="text/css">
-           .remove{
-            cursor: pointer;
-           }
-       </style>
+        <style type="text/css">
+        .remove{
+        cursor: pointer;
+        }
+        </style>
     </head>
     <body>
         
@@ -92,7 +92,7 @@ URL: https://www.freshdesignweb.com/ustora/
                         
                         <div class="col-sm-6">
                             <div class="shopping-item">
-                                <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                                <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                                             </tr>
                                                         </thead>
                                                         <tbody id="listCart">
-                                                          <!--   <tr class="cart_item">
+                                                            <!--   <tr class="cart_item">
                                                                 <td class="product-remove">
                                                                     <a title="Remove this item" class="remove" href="#">×</a>
                                                                 </td>
@@ -287,7 +287,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                                                 </tr>
                                                                 <tr class="order-total">
                                                                     <th>Order Total</th>
-                                                                    <td><strong><span class="amount" id="total-price">£15.00</span></strong> </td>
+                                                                    <td><strong><span class="amount" id="total-price"></span></strong> </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -652,12 +652,14 @@ URL: https://www.freshdesignweb.com/ustora/
                                 <!-- Main Script -->
                                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
                                 <script src="js/main.js"></script>
+                                <!--  start add san pham vao gio hang -->
+                                <script src="./js/add_sp.js"></script>
+                                getCountCart()
+                                <!--  end add san pham vao gio hang -->
                                 <script type="text/javascript">
-
                                 function getDataCart(){
                                 var getCart=localStorage.getItem('cart')
                                 var listsp = JSON.parse(getCart)
-                                document.querySelector(".product-count").innerText=listsp.length
                                 var listGetDataApi=[]
                                 listsp.forEach(elements=>{
                                 var url_get_info_API = "http://localhost:3000/products"+"/"+elements.id
@@ -667,18 +669,20 @@ URL: https://www.freshdesignweb.com/ustora/
                                 Promise.all(listGetDataApi).then(function(data) {
                                 var cartHtml=""
                                 data.forEach(elements=>{
-                                    listsp.forEach(elements1=>{
-                                        if(elements.data.id==elements1.id){
-                                            elements.data.sl=elements1.sl
-                                        }
-                                    })
+                                listsp.forEach(elements1=>{
+                                if(elements.data.id==elements1.id){
+                                elements.data.sl=elements1.sl
+                                }
+                                })
                                 })
                                 var totalPrice=0
                                 var index=-1;
                                 data.forEach(elements=>{
-                                totalPrice +=  elements.data.price*elements.data.sl
+                                totalPrice +=  elements.data.sale*elements.data.sl
                                 console.log(elements.data)
                                 index++
+                                var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.data.sale)
+                                var totalgia =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.data.sale*elements.data.sl)
                                 cartHtml += `
                                 <tr class="cart_item">
                                     <td class="product-remove">
@@ -691,50 +695,56 @@ URL: https://www.freshdesignweb.com/ustora/
                                         <a href="single-product.html?id=${elements.data.id}">${elements.data.name_product}</a>
                                     </td>
                                     <td class="product-price">
-                                        <span class="amount">${elements.data.price}</span>
+                                        <span class="amount">${sale}</span>
                                     </td>
                                     <td class="product-quantity">
                                         <div class="quantity buttons_added">
-                                            <input onchange="changeSl(${index},this)" type="number" size="4" class="input-text qty text" title="Qty" value="${elements.data.sl}" min="0" step="1">                
+                                            <input onchange="changeSl(${index},this)" type="number" size="4" class="input-text qty text" title="Qty" value="${elements.data.sl}" min="0" step="1">
                                         </div>
                                     </td>
                                     <td class="product-subtotal">
-                                        <span class="amount">${elements.data.price*elements.data.sl}</span>
+                                        <span class="amount">${totalgia}</span>
                                     </td>
                                 </tr>
                                 `
                                 }
-
                                 )
-                                 document.querySelector("#listCart").innerHTML=cartHtml
-                                 document.querySelector("#total-price").innerHTML=totalPrice
-                                 console.log(totalPrice)
+                                var totalPriceFM =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice)
+                                document.querySelector("#listCart").innerHTML=cartHtml
+                                document.querySelector("#total-price").innerHTML=totalPriceFM
+                                console.log(totalPrice)
                                 });
-                                }    
-                                 getDataCart()
-                                 function remove(index){
-                                 var getCart=localStorage.getItem('cart')
-                                 var listsp = JSON.parse(getCart)
-                                 listsp.splice(index,1)
-                                 var sonlistsp = JSON.stringify(listsp)
-                                 console.log(sonlistsp)
-                                 localStorage.setItem("cart", sonlistsp);
-                                 getDataCart()
-                                    
-                                 }
-                                 function changeSl(index,elements){
-                                 if(elements.value=="" || elements.value==0){
-                                    remove(index)
-                                 }   
-                                 var getCart=localStorage.getItem('cart')
-                                 var listsp = JSON.parse(getCart)
-                                 listsp[index].sl=elements.value
-                                 var sonlistsp = JSON.stringify(listsp)
-                                 console.log(sonlistsp)
-                                 localStorage.setItem("cart", sonlistsp);
-                                 getDataCart()
-                                 }
-                                </script>
+                                }
+                                getDataCart()
+                                // xóa sản phẩm
+                                function remove(index){
+                                var getCart=localStorage.getItem('cart')
+                                var listsp = JSON.parse(getCart)
+                                listsp.splice(index,1)
+                                var sonlistsp = JSON.stringify(listsp)
+                                console.log(sonlistsp)
+                                localStorage.setItem("cart", sonlistsp);
+                                getCountCart()
+                                getDataCart()
                                 
+                                }
+                                // thay đổi sl sp
+                                function changeSl(index,elements){
+                                var getCart=localStorage.getItem('cart')
+                                var listsp = JSON.parse(getCart)
+                                listsp[index].sl=Number(elements.value)
+                                var sonlistsp = JSON.stringify(listsp)
+                                console.log(sonlistsp)
+                                localStorage.setItem("cart", sonlistsp);
+                                if(elements.value=="" || elements.value==0){
+                                remove(index)
+                                }
+                                getCountCart()
+                                getDataCart()
+                                }
+                                </script>
+                                <!--  start add san pham vao gio hang -->
+                                <script src="./js/add_sp.js"></script>
+                                <!--  end add san pham vao gio hang -->
                             </body>
                         </html>

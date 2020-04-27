@@ -1,272 +1,149 @@
 {
   "products": [
     {
-      "id": "1",
-      "categoryId": "1",
-      "name_product": "Awesome Wooden Shoes",
-      "images": "http://lorempixel.com/640/480/abstract",
+      "categoryId": 2,
+      "name_product": "iPhone 11 Pro Max Chính hãng",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/iphone-11-pro-max-space-select-2019.png",
       "list_images": [],
-      "price": 73,
-      "sale": 31,
+      "price": 33990000,
+      "sale": 28990000,
       "amount": 60,
-      "detail": "detail 1",
-      "view": 63
+      "detail": "detail iPhone 11 Pro Max Chính hãng",
+      "view": 0,
+      "id": 1
     },
     {
-      "id": "2",
-      "categoryId": "2",
-      "name_product": "Rustic Cotton Keyboard",
-      "images": "http://lorempixel.com/640/480/business",
+      "categoryId": 2,
+      "name_product": "iPhone 11 Chính hãng (VN/A)",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/i/p/iphone11-purple-select-2019.png",
       "list_images": [],
-      "price": 10,
-      "sale": 66,
-      "amount": 0,
-      "detail": "detail 2",
-      "view": 77
+      "price": 26100000,
+      "sale": 19990000,
+      "amount": 123,
+      "detail": "Chi tiết iPhone 11 Chính hãng (VN/A) ",
+      "view": 0,
+      "id": 2
     },
     {
-      "id": "3",
-      "categoryId": "3",
-      "name_product": "Tasty Steel Cheese",
-      "images": "http://lorempixel.com/640/480/people",
+      "categoryId": 2,
+      "name_product": "iPhone 8 Plus 64GB Chính hãng (mã VN/A)",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/8/-/8-plus-3_1.jpg",
       "list_images": [],
-      "price": 85,
-      "sale": 80,
-      "amount": 35,
-      "detail": "detail 3",
-      "view": 28
+      "price": 15000000,
+      "sale": 13100000,
+      "amount": 100,
+      "detail": "detail iPhone 8 Plus 64GB Chính hãng (mã VN/A)",
+      "view": 0,
+      "id": 3
     },
     {
-      "id": "4",
-      "categoryId": "4",
-      "name_product": "Small Metal Sausages",
-      "images": "http://lorempixel.com/640/480/animals",
+      "categoryId": 3,
+      "name_product": "Samsung Galaxy A71",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/6/0/600_samsung-galaxy-a71_1_1.jpg",
       "list_images": [],
-      "price": 88,
-      "sale": 21,
-      "amount": 57,
-      "detail": "detail 4",
-      "view": 1
+      "price": 8100000,
+      "sale": 7200000,
+      "amount": 100,
+      "detail": "detail Samsung Galaxy A71",
+      "view": 0,
+      "id": 4
     },
     {
-      "id": "5",
-      "categoryId": "5",
-      "name_product": "Sleek Cotton Ball",
-      "images": "http://lorempixel.com/640/480/people",
+      "categoryId": 3,
+      "name_product": "Samsung Galaxy Note 10 Lite\t",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/2/0/2026427.png",
       "list_images": [],
-      "price": 34,
-      "sale": 48,
-      "amount": 43,
-      "detail": "detail 5",
-      "view": 3
+      "price": 12000000,
+      "sale": 11800000,
+      "amount": 70,
+      "detail": "detail Samsung Galaxy Note 10 Lite\t",
+      "view": 0,
+      "id": 5
     },
     {
-      "id": "6",
-      "categoryId": "6",
-      "name_product": "Handmade Wooden Shoes",
-      "images": "http://lorempixel.com/640/480/fashion",
+      "categoryId": 3,
+      "name_product": "Samsung Galaxy A51\t",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/s/a/samsung-galaxy-a51-black_10.jpg",
       "list_images": [],
-      "price": 11,
-      "sale": 50,
-      "amount": 75,
-      "detail": "detail 6",
-      "view": 90
+      "price": 9200000,
+      "sale": 8500000,
+      "amount": 122,
+      "detail": "detail Samsung Galaxy A51",
+      "view": 0,
+      "id": 6
     },
     {
-      "id": "7",
-      "categoryId": "7",
-      "name_product": "Sleek Fresh Soap",
-      "images": "http://lorempixel.com/640/480/animals",
+      "categoryId": 4,
+      "name_product": "Oppo Reno 2F",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/r/e/reno_2f_2.jpg",
       "list_images": [],
-      "price": 9,
-      "sale": 86,
-      "amount": 51,
-      "detail": "detail 7",
-      "view": 78
+      "price": 7990000,
+      "sale": 7100000,
+      "amount": 122,
+      "detail": "detail Oppo Reno 2F",
+      "view": 0,
+      "id": 7
     },
     {
-      "id": "8",
-      "categoryId": "8",
-      "name_product": "Intelligent Frozen Keyboard",
-      "images": "http://lorempixel.com/640/480/fashion",
+      "categoryId": 4,
+      "name_product": "Oppo A31",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/o/p/oppo-a31-trang.png",
       "list_images": [],
-      "price": 49,
-      "sale": 19,
-      "amount": 34,
-      "detail": "detail 8",
-      "view": 1
+      "price": 5100000,
+      "sale": 4100000,
+      "amount": 123,
+      "detail": "detail Oppo A31",
+      "view": 0,
+      "id": 8
     },
     {
-      "id": "9",
-      "categoryId": "9",
-      "name_product": "Incredible Rubber Computer",
-      "images": "http://lorempixel.com/640/480/sports",
+      "categoryId": 4,
+      "name_product": "Oppo Find X2 Pro",
+      "images": "https://cdn.cellphones.com.vn/media/catalog/product/cache/7/small_image/220x175/9df78eab33525d08d6e5fb8d27136e95/o/p/oppo-x2-xam_2.jpg",
       "list_images": [],
-      "price": 23,
-      "sale": 83,
-      "amount": 99,
-      "detail": "detail 9",
-      "view": 46
-    },
-    {
-      "id": "10",
-      "categoryId": "10",
-      "name_product": "Refined Frozen Shirt",
-      "images": "http://lorempixel.com/640/480/animals",
-      "list_images": [],
-      "price": 93,
-      "sale": 85,
-      "amount": 17,
-      "detail": "detail 10",
-      "view": 45
-    },
-    {
-      "id": "11",
-      "categoryId": "1",
-      "name_product": "Handcrafted Concrete Pizza",
-      "images": "http://lorempixel.com/640/480/business",
-      "list_images": [],
-      "price": 29,
-      "sale": 73,
-      "amount": 13,
-      "detail": "detail 11",
-      "view": 95
-    },
-    {
-      "id": "12",
-      "categoryId": "2",
-      "name_product": "Practical Wooden Ball",
-      "images": "http://lorempixel.com/640/480/people",
-      "list_images": [],
-      "price": 25,
-      "sale": 86,
-      "amount": 95,
-      "detail": "detail 12",
-      "view": 26
-    },
-    {
-      "id": "13",
-      "categoryId": "3",
-      "name_product": "Licensed Rubber Pizza",
-      "images": "http://lorempixel.com/640/480/sports",
-      "list_images": [],
-      "price": 85,
-      "sale": 77,
-      "amount": 85,
-      "detail": "detail 13",
-      "view": 31
-    },
-    {
-      "id": "14",
-      "categoryId": "4",
-      "name_product": "Unbranded Granite Gloves",
-      "images": "http://lorempixel.com/640/480/nightlife",
-      "list_images": [],
-      "price": 56,
-      "sale": 66,
-      "amount": 81,
-      "detail": "detail 14",
-      "view": 65
-    },
-    {
-      "id": "15",
-      "categoryId": "5",
-      "name_product": "Ergonomic Wooden Soap",
-      "images": "http://lorempixel.com/640/480/nature",
-      "list_images": [],
-      "price": 66,
-      "sale": 9,
+      "price": 13900000,
+      "sale": 11000000,
       "amount": 22,
-      "detail": "detail 15",
-      "view": 63
-    },
-    {
-      "id": "16",
-      "categoryId": "6",
-      "name_product": "Incredible Frozen Pants",
-      "images": "http://lorempixel.com/640/480/fashion",
-      "list_images": [],
-      "price": 44,
-      "sale": 66,
-      "amount": 95,
-      "detail": "detail 16",
-      "view": 19
-    },
-    {
-      "categoryId": "1",
-      "name_product": "AA",
-      "images": "https://fptshop.com.vn/uploads/originals/2019/12/30/637133160350737542_201407171129187887_1378267132_fptshop-ver1-0-logo-color-bg-black.jpg",
-      "list_images": [],
-      "price": 111111111,
-      "sale": 111,
-      "amount": 111,
-      "detail": "11111",
+      "detail": "detail Oppo Find X2 Pro",
       "view": 0,
-      "id": "46Zq7dn"
-    },
-    {
-      "categoryId": "1",
-      "name_product": "BBBB",
-      "images": "https://upload.wikimedia.org/wikipedia/vi/8/80/FPT_New_Logo.png",
-      "list_images": [],
-      "price": 1212121,
-      "sale": 1212,
-      "amount": 121,
-      "detail": "fdsafasdf",
-      "view": 0,
-      "id": "k7nLYzy"
+      "id": 9
     }
   ],
   "category": [
     {
-      "id": "1",
-      "name_category": "Handcrafted Concrete Chips",
-      "images_category": "http://lorempixel.com/640/480/fashion"
+      "name_category": "Vivo",
+      "images_category": "https://cdn.freelogovectors.net/wp-content/uploads/2016/07/vivo-logo.png",
+      "id": 1
     },
     {
-      "id": "2",
-      "name_category": "Incredible Plastic Bacon",
-      "images_category": "http://lorempixel.com/640/480/food"
+      "name_category": "IPHONE",
+      "images_category": "https://1000logos.net/wp-content/uploads/2017/02/iPhone_logo.png",
+      "id": 2
     },
     {
-      "id": "3",
-      "name_category": "Ergonomic Soft Ball",
-      "images_category": "http://lorempixel.com/640/480/nature"
+      "name_category": "SAM SUNG ",
+      "images_category": "https://lh3.googleusercontent.com/proxy/m7-h65QF8RP08hBGFpW2mns6kypBqdXnXveHF5SJwj4mxWY-rE0GncNa2vIh2jf3QH90E2WJvU0TygK7nSnrEA",
+      "id": 3
     },
     {
-      "id": "4",
-      "name_category": "Ergonomic Wooden Soap",
-      "images_category": "http://lorempixel.com/640/480/cats"
+      "name_category": "OPPO",
+      "images_category": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/OPPO_LOGO_2019.svg/1280px-OPPO_LOGO_2019.svg.png",
+      "id": 4
     },
     {
-      "id": "5",
-      "name_category": "Refined Fresh Tuna",
-      "images_category": "http://lorempixel.com/640/480/abstract"
+      "name_category": "Xiaomi",
+      "images_category": "https://www.freepnglogos.com/uploads/xiaomi-png/xiaomi-logo-logos-marcas-8.png",
+      "id": 5
     },
     {
-      "id": "6",
-      "name_category": "Licensed Fresh Cheese",
-      "images_category": "http://lorempixel.com/640/480/fashion"
+      "name_category": "Vsmart",
+      "images_category": "https://vsmart.net/eu-en/media/pages/blog/featured-blog-logo.png",
+      "id": 6
     },
     {
-      "id": "7",
-      "name_category": "Refined Wooden Pants",
-      "images_category": "http://lorempixel.com/640/480/city"
-    },
-    {
-      "id": "8",
-      "name_category": "Licensed Concrete Ball",
-      "images_category": "http://lorempixel.com/640/480/nightlife"
-    },
-    {
-      "id": "9",
-      "name_category": "Generic Plastic Chips",
-      "images_category": "http://lorempixel.com/640/480/fashion"
-    },
-    {
-      "id": "10",
-      "name_category": "Refined Rubber Bike",
-      "images_category": "http://lorempixel.com/640/480/abstract"
+      "name_category": "Nokia",
+      "images_category": "https://i.pinimg.com/originals/63/ca/a3/63caa317adda8ddd239957630c38247e.png",
+      "id": 7
     }
   ],
   "posts": [
@@ -275,79 +152,23 @@
       "images": "http://lorempixel.com/640/480/business",
       "title": "Small Plastic Cheese",
       "detail": "Licensed Gloves"
-    },
-    {
-      "id": "2",
-      "images": "http://lorempixel.com/640/480/fashion",
-      "title": "Ergonomic Fresh Towels",
-      "detail": "synthesize Handcrafted Plastic Chicken Savings Account"
-    },
-    {
-      "id": "3",
-      "images": "http://lorempixel.com/640/480/abstract",
-      "title": "Intelligent Concrete Bike",
-      "detail": "Avon mint green"
-    },
-    {
-      "id": "4",
-      "images": "http://lorempixel.com/640/480/sports",
-      "title": "Generic Fresh Fish",
-      "detail": "RAM Cambridgeshire"
-    },
-    {
-      "id": "5",
-      "images": "http://lorempixel.com/640/480/city",
-      "title": "Gorgeous Granite Chicken",
-      "detail": "SMTP"
-    },
-    {
-      "id": "6",
-      "images": "http://lorempixel.com/640/480/fashion",
-      "title": "Intelligent Cotton Salad",
-      "detail": "Borders RSS"
     }
   ],
   "order": [
     {
-      "id": "1",
+      "id": 1,
       "fullname": "Giuseppe Crist IV",
       "phone": "(362) 061-6262 x80982",
       "address": "8491 Emory Landing",
       "email": "Rebeka.Jakubowski@gmail.com",
       "total_price": "61"
-    },
-    {
-      "id": "2",
-      "fullname": "Stan Lebsack",
-      "phone": "(521) 187-9613",
-      "address": "548 Roger Mountain",
-      "email": "Kaylah_Mayert79@gmail.com",
-      "total_price": "72"
     }
   ],
   "order_detail": [
     {
-      "id": "1",
+      "id": 1,
       "productsID": 9,
       "amount": 77,
-      "orderID": 1
-    },
-    {
-      "id": "2",
-      "productsID": 4,
-      "amount": 70,
-      "orderID": 2
-    },
-    {
-      "id": "3",
-      "productsID": 11,
-      "amount": 45,
-      "orderID": 1
-    },
-    {
-      "id": "4",
-      "productsID": 4,
-      "amount": 78,
       "orderID": 1
     }
   ]

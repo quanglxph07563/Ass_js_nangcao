@@ -29,10 +29,22 @@ URL: https://www.freshdesignweb.com/ustora/
         <style type="text/css">
         .product-f-image img{
         width: 100%;
-        height: 264px
+        height: 178px
         }
         .add-to-cart-link{
         cursor: pointer;
+        }
+        .owl-carousel .owl-item img{
+            padding: 10px;
+        }
+        .single-product:hover .product-hover a.view-details-link{
+            bottom: 20%
+        }
+        .single-product:hover .product-hover a.add-to-cart-link{
+            top: 20%
+        }
+        .single-product h2{
+            height: 50px
         }
         </style>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -523,12 +535,14 @@ URL: https://www.freshdesignweb.com/ustora/
                                                 url: url,
                                                 }).done(function(data) {
                                                 data.forEach(elements=>{
+                                                var price =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.price)
+                                                 var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
                                                 htmldata+=`
                                                 <div class="single-product">
                                                     <div class="product-f-image">
                                                         <img src="${elements.images}" alt="">
                                                         <div class="product-hover">
-                                                            <a  onclick="addCart('${elements.id}',1)" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                            <a  onclick="addCart(${elements.id},1)" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                                             <a href="single-product.html?id=${elements.id}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                                         </div>
                                                     </div>
@@ -536,7 +550,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                                     <h2><a href="single-product.html">${elements.name_product}</a></h2>
                                                     
                                                     <div class="product-carousel-price">
-                                                        <ins>$${elements.price}</ins> <del>$${elements.sale}</del>
+                                                        <ins>${sale}</ins> <del>$${price}</del>
                                                     </div>
                                                 </div>
                                                 `
@@ -546,6 +560,9 @@ URL: https://www.freshdesignweb.com/ustora/
                                                 </script>
                                                 <!--  start add san pham vao gio hang -->
                                                 <script src="./js/add_sp.js"></script>
+                                                <!--  end add san pham vao gio hang -->
+                                                 <!--  start add san pham vao gio hang -->
+                                                <script src="./js/format_number.js"></script>
                                                 <!--  end add san pham vao gio hang -->
                                             </body>
                                         </html>

@@ -37,10 +37,16 @@ URL: https://www.freshdesignweb.com/ustora/
         padding: 30px 0 130px
         }
         .product-upper img{
-            height: 198px
+        height: 198px
         }
         .add_to_cart_button{
-            cursor: pointer;
+        cursor: pointer;
+        }
+        .single-shop-product{
+        /*  text-align: center;*/
+        }
+        .single-shop-product h2{
+        height: 45px
         }
         </style>
     </head>
@@ -301,42 +307,39 @@ URL: https://www.freshdesignweb.com/ustora/
                     <script src="js/main.js"></script>
                     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                   <!--  start get data -->
-                    <script> 
-                   
+                    <!--  start get data -->
+                    <script>
+                    
                     var url = "http://localhost:3000/products"
                     $.ajax({
                     method:"GET",
                     url: url,
                     }).done(function(data) {
                     showdata(data)
-                   
+                    
                     });
                     </script>
                     <!--  end get data -->
-
                     <!--  start get data xap xep  -->
                     <script type="text/javascript">
                     var xapxep = document.querySelector("#xapxep")
                     xapxep.onchange = function(){
                     var loai = Number(xapxep.value)
                     switch (loai) {
-
                     case 1:
                     locxapxep("sale","asc")
                     break;
-
                     case 2:
                     locxapxep("sale","desc")
-    
+                    
                     break;
                     case 3:
                     locxapxep("name_product","asc")
-               
+                    
                     break;
                     case 4:
                     locxapxep("name_product","desc")
-            
+                    
                     break;
                     default:
                     // statements_def
@@ -344,26 +347,27 @@ URL: https://www.freshdesignweb.com/ustora/
                     }
                     }
                     function locxapxep(sort,order){
-                       var urlxapxep = "http://localhost:3000/products?_sort="+sort+"&_order="+order
-                       console.log(urlxapxep)
-                       axios.get(urlxapxep)
-                          .then(function (response) {                        
-                           var data = response.data;
-                           showdata(data)
-                          })
-                          .catch(function (error) {
-                            // handle error
-                            console.log(error);
-                          })
-                          .then(function () {
-                            // always executed
-                          });
+                    var urlxapxep = "http://localhost:3000/products?_sort="+sort+"&_order="+order
+                    console.log(urlxapxep)
+                    axios.get(urlxapxep)
+                    .then(function (response) {
+                    var data = response.data;
+                    showdata(data)
+                    })
+                    .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                    })
+                    .then(function () {
+                    // always executed
+                    });
                     }
-
-              
+                    
                     function showdata(data){
                     var htmldata=""
                     data.forEach(elements=>{
+                    var price =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.price)
+                    var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
                     htmldata+=`
                     <div class="col-md-3 col-sm-6">
                         <div class="single-shop-product">
@@ -372,21 +376,21 @@ URL: https://www.freshdesignweb.com/ustora/
                             </div>
                             <h2><a href="single-product.html?id=${elements.id}">${elements.name_product}</a></h2>
                             <div class="product-carousel-price">
-                                <ins>$${elements.sale}</ins> <del>$${elements.price}</del>
+                                <ins>${sale}</ins> <del>${price}</del>
                             </div>
                             
                             <div class="product-option-shop">
-                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" onclick="addCart('${elements.id}',1)">Add to cart</a>
+                                <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" onclick="addCart(${elements.id},1)">Add to cart</a>
                             </div>
                         </div>
                     </div>
                     `
                     })
                     console.log(data)
-                     document.querySelector("#list_sanpham").innerHTML=htmldata
+                    document.querySelector("#list_sanpham").innerHTML=htmldata
                     }
                     </script>
-                       <!--  start add san pham vao gio hang -->
+                    <!--  start add san pham vao gio hang -->
                     <script src="./js/add_sp.js"></script>
                     <!--  end add san pham vao gio hang -->
                 </body>

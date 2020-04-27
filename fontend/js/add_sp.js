@@ -27,7 +27,7 @@ text: "You clicked the button!",
 icon: "success",
 button: "Aww yiss!",
 });
-document.querySelector(".product-count").innerText=listsp.length
+getCountCart()
 }else{
 var listsp =[]
 listsp.push(sanpham)
@@ -45,6 +45,10 @@ button: "Aww yiss!",
 function getCountCart(){
 var getCart=localStorage.getItem('cart')
 var listsp = JSON.parse(getCart)
-document.querySelector(".product-count").innerText=listsp.length
+var totalsp=0
+listsp.forEach(elements=>{
+totalsp+=elements.sl
+})
+document.querySelector(".product-count").innerText=totalsp
 }
 getCountCart()
