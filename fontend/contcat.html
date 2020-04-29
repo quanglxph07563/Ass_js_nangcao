@@ -287,8 +287,8 @@ URL: https://www.freshdesignweb.com/ustora/
                     <!--  start get data -->
                     <script type="text/javascript">
                     function validateEmail(email) {
-                      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                      return re.test(email);
+                    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(email);
                     }
                     var namepeople = document.querySelector("#name")
                     var address = document.querySelector("#address")
@@ -302,34 +302,36 @@ URL: https://www.freshdesignweb.com/ustora/
                     }
                     if(namepeople.value.length < 5 || namepeople.value.length > 30){
                     namepeople.nextElementSibling.innerHTML="Tên phải từ 5 đến 30 kí tự"
-        
+                    
                     }else if(address.value==""){
-                        address.nextElementSibling.innerHTML="Địa chỉ không được để trống"
-
+                    address.nextElementSibling.innerHTML="Địa chỉ không được để trống"
                     }else if(email.value=="") {
-                        email.nextElementSibling.innerHTML="Email không được để rỗng"
-                 
+                    email.nextElementSibling.innerHTML="Email không được để rỗng"
+                    
                     }else if(!validateEmail(email.value)){
-                        email.nextElementSibling.innerHTML="Vui lòng nhập đúng định dạng email"
-
+                    email.nextElementSibling.innerHTML="Vui lòng nhập đúng định dạng email"
                     }else if(content.value==""){
-                             content.nextElementSibling.innerHTML="Nội dung không được để rỗng"
+                    content.nextElementSibling.innerHTML="Nội dung không được để rỗng"
                     }
                     else{
-                        addlienhe()
+                    addlienhe()
                     }
                     }
-                    function addlienhe(){   
+                    function addlienhe(){
                     var datalienhe={
                     name:namepeople.value,
-                    address:namepeople.value,
-                    email:namepeople.value,
+                    address:address.value,
+                    email:email.value,
                     content:content.value
                     }
                     // console.log(JSON.stringify(datasp))
                     axios.post("http://localhost:3000/contact/",datalienhe)
                     .then(data => {
-                   alert("thành công")
+                    alert("Chúng tôi sẽ liên hệ với bạn sớm nhất")
+                    namepeople.value=""
+                    address.value=""
+                    email.value=""
+                    content.value=""
                     })
                     .catch(function (error) {
                     console.log(error);
