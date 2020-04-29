@@ -35,16 +35,19 @@ URL: https://www.freshdesignweb.com/ustora/
         cursor: pointer;
         }
         .owl-carousel .owl-item img{
-            padding: 10px;
+        padding: 10px;
         }
         .single-product:hover .product-hover a.view-details-link{
-            bottom: 20%
+        bottom: 20%
         }
         .single-product:hover .product-hover a.add-to-cart-link{
-            top: 20%
+        top: 20%
         }
         .single-product h2{
-            height: 50px
+        height: 50px
+        }
+        .product-wid-title{
+            font-family: inherit
         }
         </style>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -278,40 +281,13 @@ URL: https://www.freshdesignweb.com/ustora/
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-4">
+                                                     <h2 class="product-wid-title">Sản phẩm mới nhất</h2>
                                                     <div class="single-product-widget">
-                                                        <h2 class="product-wid-title">Top Sellers</h2>
+                                                       
                                                         <a href="" class="wid-view-more">View All</a>
                                                         <div class="single-wid-product">
                                                             <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
                                                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                                                            <div class="product-wid-rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                            <div class="product-wid-price">
-                                                                <ins>$400.00</ins> <del>$425.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="single-wid-product">
-                                                            <a href="single-product.html"><img src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                                                            <h2><a href="single-product.html">Apple new mac book 2015</a></h2>
-                                                            <div class="product-wid-rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                            <div class="product-wid-price">
-                                                                <ins>$400.00</ins> <del>$425.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="single-wid-product">
-                                                            <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                                                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
                                                             <div class="product-wid-rating">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -374,8 +350,9 @@ URL: https://www.freshdesignweb.com/ustora/
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="single-product-widget">
-                                                        <h2 class="product-wid-title">Top New</h2>
+                                                     <h2 class="product-wid-title">Bài viết mới nhất</h2>
+                                                    <div class="single-product-widget" id="bvmn">
+                                                       
                                                         <a href="#" class="wid-view-more">View All</a>
                                                         <div class="single-wid-product">
                                                             <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
@@ -391,34 +368,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                                                 <ins>$400.00</ins> <del>$425.00</del>
                                                             </div>
                                                         </div>
-                                                        <div class="single-wid-product">
-                                                            <a href="single-product.html"><img src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                                                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
-                                                            <div class="product-wid-rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                            <div class="product-wid-price">
-                                                                <ins>$400.00</ins> <del>$425.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="single-wid-product">
-                                                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                                                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
-                                                            <div class="product-wid-rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                            <div class="product-wid-price">
-                                                                <ins>$400.00</ins> <del>$425.00</del>
-                                                            </div>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -536,7 +486,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                                 }).done(function(data) {
                                                 data.forEach(elements=>{
                                                 var price =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.price)
-                                                 var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
+                                                var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
                                                 htmldata+=`
                                                 <div class="single-product">
                                                     <div class="product-f-image">
@@ -557,11 +507,84 @@ URL: https://www.freshdesignweb.com/ustora/
                                                 })
                                                 document.querySelector(".product-carousel").innerHTML=htmldata
                                                 });
+                                                var htmldanhmuc=""
+                                                var url = "http://localhost:3000/category"
+                                                $.ajax({
+                                                async:false,
+                                                method:"GET",
+                                                url: url,
+                                                }).done(function(data) {
+                                                data.forEach(elements=>{
+                                                htmldanhmuc+=`
+                                                <a href="http://localhost:3000/products/categoryId=${elements.id}">
+                                                    <img style="width: 270px;height: 170px"  src="${elements.images_category}" alt="">
+                                                </a>
+                                                `
+                                                })
+                                                document.querySelector(".brand-list").innerHTML=htmldanhmuc
+                                                });
+                                                // show sản phẩm mới nhất
+                                                var urlspmn="http://localhost:3000/products?_sort=id&_order=desc&_limit=3"
+                                                axios.get(urlspmn)
+                                                  .then(function (response) {
+                                                    var htmlspmn=""
+                                                    var data = response.data
+                                                    data.forEach(elements=>{
+                                                         var price =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.price)
+                                                var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.sale)
+                                                        htmlspmn+=`
+                                                       <div class="single-wid-product">
+                                                            <a href="single-product.html?id=${elements.id}"><img src="${elements.images}" alt="" class="product-thumb"></a>
+                                                            <h2><a href="single-product.html?id=${elements.id}">${elements.name_product}</a></h2>
+                                                            <div class="product-wid-rating">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+                                                            <div class="product-wid-price">
+                                                                <ins>${sale}</ins> <del>${price}</del>
+                                                            </div>
+                                                        </div>
+                                                        `
+                                                        })
+                                                    document.querySelector(".single-product-widget").innerHTML=htmlspmn
+                                                  })
+                                                  .catch(function (error) {
+                                                    console.log(error);
+                                                  });
+                                                  // show bài viết mới nhất
+                                             var urlbvmn="http://localhost:3000/posts?_sort=id&_order=desc&_limit=3"
+                                                axios.get(urlbvmn)
+                                                  .then(function (response) {
+                                                    var htmlbvmn=""
+                                                    var data = response.data
+                                                    data.forEach(elements=>{
+                                                        htmlbvmn+=`
+                                                       <div class="single-wid-product">
+                                                            <a href="chitiettintuc.html?id=${elements.id}"><img src="${elements.images}" alt="" class="product-thumb"></a>
+                                                            <h2><a href="chitiettintuc.html?id=${elements.id}">${elements.title}</a></h2>
+                                                            <div class="product-wid-rating">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        `
+                                                        })
+                                                    document.querySelector("#bvmn").innerHTML=htmlbvmn
+                                                  })
+                                                  .catch(function (error) {
+                                                    console.log(error);
+                                                  });
                                                 </script>
                                                 <!--  start add san pham vao gio hang -->
                                                 <script src="./js/add_sp.js"></script>
                                                 <!--  end add san pham vao gio hang -->
-                                                 <!--  start add san pham vao gio hang -->
+                                                <!--  start add san pham vao gio hang -->
                                                 <script src="./js/format_number.js"></script>
                                                 <!--  end add san pham vao gio hang -->
                                             </body>
