@@ -14,12 +14,21 @@
         <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="./dist/css/style.min.css" rel="stylesheet">
+        <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style type="text/css">
+            .tieudetext p{
+                  white-space: nowrap;
+                width: 400px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
     </head>
     <body>
         <!-- ============================================================== -->
@@ -202,9 +211,9 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-3 align-self-center">
-                            <h4 class="page-title">Danh sách sản phẩm</h4>
+                            <h4 class="page-title">Danh sách bài viết</h4>
                         </div>
-                        <button data-toggle="modal" data-target="#add_danhmuc" class="btn btn-danger col-2" >Add danh mục</button>
+                        <button data-toggle="modal" data-target="#add_danhmuc" class="btn btn-danger col-2" >Add bài viết</button>
                         <div class="col-7 align-self-center">
                             <div class="d-flex align-items-center justify-content-end">
                                 <nav aria-label="breadcrumb">
@@ -212,7 +221,7 @@
                                         <li class="breadcrumb-item">
                                             <a href="#">Home</a>
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">Danh sách danh mục</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Danh sách bài viết</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -259,10 +268,10 @@
                     <!-- Button trigger modal -->
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Sửa danh mục</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Sửa bài viết</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -270,16 +279,23 @@
                                 <div class="modal-body">
                                     <form>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Tên danh mục</label>
+                                            <label for="exampleInputEmail1">Tiêu đề</label>
                                             <input type="email" class="form-control" id="name_category" aria-describedby="emailHelp" placeholder="Tên danh mục">
                                             <span  class="error" style="color: red"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Ảnh danh mục</label>
+                                            <label for="exampleInputPassword1">Ảnh bài viết</label>
                                             <input onchange="loadImageFileAsURL()" type="file" class="form-control" id="images_category" placeholder="Ảnh danh mục">
                                             <span  class="error" style="color: red"></span>
                                         </div>
-                                        <img width="200px" id="images_show" src="">
+                                         <img width="200px" id="images_show" src="">
+                                         <div class="form-group">
+                                            <label for="exampleInputPassword1">Nôi dung tin tức</label>
+                                            <textarea id="editor0" name="editor0"></textarea>
+                                              <span  id="editor0error" class="error" style="color: red"></span>
+                                                
+                                        </div>
+                                       
                                     </form>
                                 </div>
                                 <div class="modal-footer">
@@ -291,10 +307,10 @@
                     </div>
 
                     <div class="modal fade" id="add_danhmuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Thêm bài viết</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -302,21 +318,30 @@
                                 <div class="modal-body">
                                     <form>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Tên danh mục</label>
+                                            <label for="exampleInputEmail1">Tiêu đề</label>
                                             <input type="email" class="form-control" id="add_name_category" aria-describedby="emailHelp" placeholder="Tên danh mục">
                                             <span  class="error" style="color: red"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Ảnh danh mục</label>
+                                            <label for="exampleInputPassword1">Ảnh bài viết</label>
                                             <input onchange="loadImageFileAsURLAdd()" type="file" class="form-control" id="add_images_category" placeholder="Ảnh danh mục">
                                             <span  class="error" style="color: red"></span>
                                         </div>
                                         <img width="200px" id="add_images_show" src="">
+                                         <div class="form-group">
+                                            <label for="exampleInputPassword1">Nôi dung tin tức</label>
+                                            <textarea id="editor1" name="editor1"></textarea>
+                                                <script>
+                                                        CKEDITOR.replace( 'editor1' );
+                                                </script>
+                                           <span  id="editor1error" class="error" style="color: red"></span>
+                                        </div>
+                                        
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                                    <button type="button" id="add_update" onclick="adddanhmuc()" class="btn btn-primary">Thêm danh mục </button>
+                                    <button type="button" id="add_update" onclick="adddanhmuc()" class="btn btn-primary">Thêm bài viết </button>
                                 </div>
                             </div>
                         </div>
@@ -368,11 +393,12 @@
         <script src="./dist/js/pages/dashboards/dashboard1.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+ 
         <script>
         
         // get data danh mục
         function getdatadm(){
-        var urldm = "http://localhost:3000/category"
+        var urldm = "http://localhost:3000/posts"
         var listdatadm=""
         axios.get(urldm)
         .then(function (response) {
@@ -382,7 +408,7 @@
         console.log(error);
         });
         // get data sản phảma
-        var url = "http://localhost:3000/category?_sort=id&_order=desc"
+        var url = "http://localhost:3000/posts?_sort=id&_order=desc"
         var htmldata=""
         axios.get(url)
         .then(function (response) {
@@ -392,8 +418,8 @@
         htmldata+=`
         <tr>
             <th scope="row">${elements.id}</th>
-            <td>${elements.name_category}</td>
-            <td><img src="${elements.images_category}" width="200px"></td>
+            <td class="tieudetext"><p>${elements.title}</p></td>
+            <td><img src="${elements.images}" width="200px"></td>
             <td>
                 <button type="button" class="btn btn-warning " onclick="xoaSp(this,'${elements.id}')">Xóa</button>
                 <button type="button" onclick="showsuadanhmuc(${elements.id})" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -412,7 +438,7 @@
         getdatadm()
         // xử lý xóa
         function xoaSp(elements,id){
-        var deleteUrl ="http://localhost:3000/category/"+id
+        var deleteUrl ="http://localhost:3000/posts/"+id
         Swal.fire({
         title: 'Bạn chắc chắn muốn xóa?',
         text: "You won't be able to revert this!",
@@ -429,7 +455,7 @@
         Swal.fire({
         position: 'bottom-end',
         icon: 'success',
-        title: 'Xóa danh mục thành công',
+        title: 'Xóa tin tức thành công',
         showConfirmButton: false,
         timer: 1500
         })
@@ -441,13 +467,16 @@
 
         //show danh mục
         function showsuadanhmuc(id){
-        var url_category_id="http://localhost:3000/category/"+id
+        var url_category_id="http://localhost:3000/posts/"+id
         axios.get(url_category_id)
         .then(function (response) {
         
         var listdata = response.data
-        document.querySelector("#name_category").value=listdata.name_category
-        document.querySelector("#images_show").setAttribute("src",listdata.images_category)
+        document.querySelector("#name_category").value=listdata.title
+        document.querySelector("#images_show").setAttribute("src",listdata.images)
+        document.querySelector("#editor0").innerText=listdata.detail
+        console.log(document.querySelector("#editor0"))
+        CKEDITOR.replace( 'editor0' );
         document.querySelector("#save_update").setAttribute("onclick",`updatespluu(${listdata.id})`)
         })
         .catch(function (error) {
@@ -459,6 +488,7 @@
         // xử lý thêm danh mục
         var tendanhmucadd= document.querySelector("#add_name_category")
         var images_add= document.getElementById("add_images_category")
+        var editor1_update=document.querySelector("#editor1error")
         // xư lý images->base64
         
         function loadImageFileAsURLAdd(){
@@ -491,6 +521,8 @@
         }else if(!images_add.files[0].name.match(/.(jpg|jpeg|png|gif)$/i)) {
             images_add.nextElementSibling.innerHTML="Sai định dạng ảnh"
       
+        }else if (CKEDITOR.instances.editor1.getData().length=="") {
+            editor1_update.innerHTML="Nội dung không được để trống"
         }else{
          xulyadd()   
         
@@ -499,19 +531,20 @@
 
         // adddm
         function xulyadd(){
-        var url_category_id="http://localhost:3000/category/"
+        var url_category_id="http://localhost:3000/posts/"
         var data ={
-            name_category: tendanhmucadd.value,
-            images_category: document.querySelector("#add_images_show").src
+            title: tendanhmucadd.value,
+            images: document.querySelector("#add_images_show").src,
+            detail: CKEDITOR.instances.editor1.getData()
         } 
-        console.log(data)
-        console.log(url_category_id,data)
         axios.post(url_category_id,data)
         .then(data=>{
            $("#add_danhmuc").modal('hide');
            tendanhmucadd.value=""
            document.querySelector("#add_images_show").src=""
            images_add.value=""
+           document.querySelector("#editor1").innerHTML=""
+
             Swal.fire({
             position: 'bottom-end',
             icon: 'success',
@@ -530,6 +563,8 @@
 
         var tendanhmucupdate= document.querySelector("#name_category")
         var images_update= document.getElementById("images_category")
+        // var detali_update=CKEDITOR.instances.editor0.getData()
+        var editor0_update=document.querySelector("#editor0error")
         // xư lý images->base64
         
         function loadImageFileAsURL(){
@@ -560,20 +595,24 @@
             listerror[k].innerHTML=""
         }
         if(tendanhmucupdate.value.length==""){
-            tendanhmucupdate.nextElementSibling.innerHTML="Tên danh mục không được để rỗng"
+            tendanhmucupdate.nextElementSibling.innerHTML="Tiêu đề không được để rỗng"
         }else if (ktimages) {
             images_update.nextElementSibling.innerHTML="Sai định dạng ảnh"
+        }else if (CKEDITOR.instances.editor0.getData().length=="") {
+            console.log(editor0_update)
+            editor0_update.innerHTML="Nội dung không được để trống"
         }else{
-         xulyupdate(id)   
+        xulyupdate(id)
         }
         }
 
         // updatedm
         function xulyupdate(id){
-        var url_category_id="http://localhost:3000/category/"+id
+        var url_category_id="http://localhost:3000/posts/"+id
         var data ={
-            name_category: tendanhmucupdate.value,
-            images_category: document.querySelector("#images_show").src
+            title: tendanhmucupdate.value,
+            images: document.querySelector("#images_show").src,
+            detail: CKEDITOR.instances.editor0.getData()
         } 
         console.log(data)
         console.log(url_category_id,data)
@@ -583,7 +622,7 @@
             Swal.fire({
             position: 'bottom-end',
             icon: 'success',
-            title: 'Cập nhật danh mục thành công',
+            title: 'Cập nhật tin tức thành công',
             showConfirmButton: false,
             timer: 2000
             })

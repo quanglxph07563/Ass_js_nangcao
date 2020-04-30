@@ -141,7 +141,7 @@ URL: https://www.freshdesignweb.com/ustora/
                             justify-content: center;">
                             <div class="col-md-8">
                                 <div class="anhbv">
-                                    <img src="https://exp.gg/vn/wp-content/uploads/2020/01/best-camera-phones-2019_thumb800-768x432.jpg">
+                                    <img src="">
                                 </div>
                                 <h2 class="title" style="margin: 20px 0px"></h2>
                                 <div class="content"></div>
@@ -251,9 +251,7 @@ URL: https://www.freshdesignweb.com/ustora/
                     axios.get(url_get_info_API)
                     .then(function (response) {
                     databv = response.data
-                    console.log(databv);
-                    
-                    document.querySelector(".anhbv img").scc= databv.images
+                    document.querySelector(".anhbv img").src= databv.images
                     document.querySelector(".title").innerHTML= databv.title
                     document.querySelector(".content").innerHTML= databv.detail
                     })
