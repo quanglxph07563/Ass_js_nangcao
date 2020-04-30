@@ -112,14 +112,10 @@ URL: https://www.freshdesignweb.com/ustora/
                             </div>
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop.html">Shop page</a></li>
-                                    <li><a href="single-product.html">Single product</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li class="active"><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="#">Category</a></li>
-                                    <li><a href="#">Others</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li ><a href="index.html">Trang chủ</a></li>
+                                    <li><a href="shop.html">Cửa hàng</a></li>
+                                    <li><a href="tintuc.html">Tin tức</a></li>
+                                    <li><a href="contcat.html">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -318,7 +314,9 @@ URL: https://www.freshdesignweb.com/ustora/
                     <script src="js/main.js"></script>
                     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
                     <script src="./js/add_sp.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
                     <script type="text/javascript">
+
 
                         getCountCart()
                            var totalPrice=0
@@ -415,8 +413,8 @@ URL: https://www.freshdesignweb.com/ustora/
                                 axios.post("http://localhost:3000/order/",dataorder)
                                 .then(data => {
                                 console.log(data)
-                                console.log(listsp)
-                                order_detail(data.id)
+                               
+                                order_detail(data.data.id)
                                 })
                                 .catch(function (error) {
                                 console.log(error);
@@ -437,6 +435,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                 amount:elements.sl,
                                 orderID:elements.orderid
                             }
+                            console.log(detail_order)
                               axios.post("http://localhost:3000/order_detail/",detail_order)
                                 .then(data => {
                                 })
@@ -444,7 +443,16 @@ URL: https://www.freshdesignweb.com/ustora/
                                 console.log(error);
                                 });
                                 });
-                            alert("thafnh coong")
+                                Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Thành công',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(thanhcong=>{
+                                    localStorage.clear();
+                                    window.location.href="thanhtoanthanhcong.html"
+                                })
                             }
                     </script>
                 </body>

@@ -104,7 +104,7 @@ URL: https://www.freshdesignweb.com/ustora/
                         
                         <div class="col-sm-6">
                             <div class="shopping-item">
-                                <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                                <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i> <span class="product-count">0</span></a>
                             </div>
                         </div>
                     </div>
@@ -128,12 +128,7 @@ URL: https://www.freshdesignweb.com/ustora/
                                     <li ><a href="index.html">Trang chủ</a></li>
                                     <li class="active"><a href="shop.html">Cửa hàng</a></li>
                                     <li><a href="tintuc.html">Tin tức</a></li>
-                                    <!--   <li><a href="single-product.html">Single product</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li> -->
-                                    <!-- <li><a href="#">Category</a></li> -->
-                                    <!-- <li><a href="#">Others</a></li> -->
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="contcat.html">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -163,7 +158,14 @@ URL: https://www.freshdesignweb.com/ustora/
                                     <option value="4">Từ Z -> A</option>
                                 </select>
                             </div>
+                            <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Tìm Kiếm</label>
+                                    <input type="text" class="form-control" id="searchsp" aria-describedby="emailHelp" placeholder="Tìm kiếm">
+                                  </div>
+                            </div>
                         </div>
+
                     </div>
                     <div class="single-product-area">
                         <div class="zigzag-bottom"></div>
@@ -389,6 +391,25 @@ URL: https://www.freshdesignweb.com/ustora/
                     console.log(data)
                     document.querySelector("#list_sanpham").innerHTML=htmldata
                     }
+
+                    // search sản phẩm
+                    var searchsp=document.querySelector("#searchsp")
+                    searchsp.onkeyup=function(){
+                        var urlsearch= "http://localhost:3000/products?q="+searchsp.value
+                        axios.get(urlsearch)
+                        .then(function (response) {
+                        var data = response.data;
+                        showdata(data)
+                        })
+                        .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                        })
+                        .then(function () {
+                        // always executed
+                        });
+                        }
+
                     </script>
                     <!--  start add san pham vao gio hang -->
                     <script src="./js/add_sp.js"></script>

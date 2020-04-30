@@ -126,15 +126,10 @@ URL: https://www.freshdesignweb.com/ustora/
                             </div>
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li ><a href="index.html">Trang chủ</a></li>
-                                    <li ><a href="shop.html">Cửa hàng</a></li>
+                                   <li><a href="index.html">Trang chủ</a></li>
+                                    <li><a href="shop.html">Cửa hàng</a></li>
                                     <li><a href="tintuc.html">Tin tức</a></li>
-                                    <!--   <li><a href="single-product.html">Single product</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li> -->
-                                    <!-- <li><a href="#">Category</a></li> -->
-                                    <!-- <li><a href="#">Others</a></li> -->
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="contcat.html">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -146,7 +141,7 @@ URL: https://www.freshdesignweb.com/ustora/
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="product-bit-title text-center">
-                                        <h2>Giỏi Hàng</h2>
+                                        <h2>Giỏ Hàng</h2>
                                     </div>
                                 </div>
                             </div>
@@ -229,8 +224,8 @@ URL: https://www.freshdesignweb.com/ustora/
                                                                 <tr class="cart-subtotal">
                                                                     <th>Thanh toán</th>
                                                                     <td><span class="amount">
-                                                                        <a href="checkout.html">
-                                                                            <button type="button" class="btn btn-primary">Thanh Toán</button>
+                                                                        <a id="thanhtoan" >
+                                                                            <button type="button"  class="btn btn-primary">Thanh Toán</button>
                                                                         </a></span></td>
                                                                     </tr>
                                                                     
@@ -688,6 +683,20 @@ URL: https://www.freshdesignweb.com/ustora/
                                     getCountCart()
                                     getDataCart()
                                     }
+
+                                    // kiểm tra có hàng trong giỏ hàng
+                                    var ktthanhtoan=document.querySelector("#thanhtoan")
+                                    ktthanhtoan.onclick= function(){
+                                        var getCart=localStorage.getItem('cart')
+                                        var listsp = JSON.parse(getCart)
+                                        console.log(listsp)
+                                        if(listsp.length<1){
+                                            alert("Vui lòng mua hàng để tiếp tục thanh toán")
+                                        }else{
+                                            window.location.href="checkout.html"
+                                        }
+                                    }
+                                    
                                     </script>
                                     <!--  start add san pham vao gio hang -->
                                     <script src="./js/add_sp.js"></script>

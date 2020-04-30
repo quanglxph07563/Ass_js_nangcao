@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
+        <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
+        <!-- Custom CSS -->
+        <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="./dist/css/style.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full" data-boxed-layout="full">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <header class="topbar" data-navbarbg="skin6">
+                <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                    <div class="navbar-header" data-logobg="skin5">
+                        <!-- This is for the sidebar toggle which is visible on mobile only -->
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                            <i class="ti-menu ti-close"></i>
+                        </a>
+                        <!-- ============================================================== -->
+                        <!-- Logo -->
+                        <!-- ============================================================== -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="logo">
+                                <!-- Logo icon -->
+                                <b class="logo-icon">
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="./assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                                </b>
+                                <!--End Logo icon -->
+                                <!-- Logo text -->
+                                <span class="logo-text">
+                                    <!-- dark Logo text -->
+                                    <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                    <!-- Light Logo text -->
+                                    <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                                </span>
+                            </a>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- End Logo -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Toggle which is visible on mobile only -->
+                        <!-- ============================================================== -->
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-left mr-auto">
+                            <!-- ============================================================== -->
+                            <!-- Search -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item search-box">
+                                <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+                                    <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-magnify font-20 mr-1"></i>
+                                        <div class="ml-1 d-none d-sm-block">
+                                            <span>Search</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <form class="app-search position-absolute">
+                                    <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                    <a class="srh-btn">
+                                        <i class="ti-close"></i>
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                        <!-- ============================================================== -->
+                        <!-- Right side toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-right">
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <!-- ============================================================== -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="./assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                                <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+                                </div>
+                            </li>
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <!-- ============================================================== -->
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+               <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                                <i class="mdi mdi-av-timer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                                <i class="mdi mdi-account-network"></i>
+                                <span class="hide-menu">Sản Phẩm</span>
+                            </a>
+                        </li>
+                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="danhmuc.html" aria-expanded="false">
+                                <i class="mdi mdi-arrange-bring-forward"></i>
+                                <span class="hide-menu">Danh mục</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="baiviet.html" aria-expanded="false">
+                                <i class="mdi mdi-border-none"></i>
+                                <span class="hide-menu">Bài Viết</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="donhang.html" aria-expanded="false">
+                                <i class="mdi mdi-face"></i>
+                                <span class="hide-menu">Đơn Hàng</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lienhe.html" aria-expanded="false">
+                                <i class="mdi mdi-file"></i>
+                                <span class="hide-menu">Liên Hệ</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error-404.html" aria-expanded="false">
+                                <i class="mdi mdi-alert-outline"></i>
+                                <span class="hide-menu">404</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+            <div class="page-wrapper">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="page-breadcrumb">
+                    <div class="row">
+                        <div class="col-3 align-self-center">
+                            <h4 class="page-title">Danh sách đơn hàng</h4>
+                        </div>
+                        <div class="col-7 align-self-center">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">Danh sách đơn hàng</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Container fluid  -->
+                <!-- ============================================================== -->
+                <div class="container-fluid">
+                    <!-- ============================================================== -->
+                    <!-- Email campaign chart -->
+                    <!-- ============================================================== -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Họ tên </th>
+                                    <th scope="col">Số Điện Thoại</th>
+                                    <th scope="col">Địa chỉ</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Tổng Tiền</th>
+                                    <th scope="col">Chi tiết</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="list_data">
+                                <!--     <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning">Xóa</button>
+                                        <button type="button" class="btn btn-success">Sửa</button>
+                                    </td>
+                                </tr> -->
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog  modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Chi tiết đơn hàng</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Tên sản phẩm</th>
+                                      <th scope="col">Ảnh sản phẩm</th>
+                                      <th scope="col">Giá sản phẩm</th>
+                                      <th scope="col">Số lượng</th>
+                                      <th scope="col">Thành tiền</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="listsp">
+                                    <tr>
+                                      <th scope="row">Sản phẩm 1</th>
+                                      <td><img src=""></td>
+                                      <td>2</td>
+                                      <td>12.000.000 đ</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                    <!-- <button type="button" id="save_update" class="btn btn-primary">Lưu thay đổi</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+          
+                    <!-- ============================================================== -->
+                    <!-- Recent comment and chats -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+                <footer class="footer text-center">
+                    All Rights Reserved by Nice admin. Designed and Developed by
+                    <a href="https://wrappixel.com">WrapPixel</a>.
+                </footer>
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Page wrapper  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Wrapper -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- All Jery -->
+        <!-- ============================================================== -->
+        <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="./assets/extra-libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <script src="./dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="./dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="./dist/js/custom.min.js"></script>
+        <!--This page JavaScript -->
+        <!--chartis chart-->
+        <script src="./assets/libs/chartist/dist/chartist.min.js"></script>
+        <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+        <script src="./dist/js/pages/dashboards/dashboard1.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script type="text/javascript">
+            // show đơn hàng
+        var url = "http://localhost:3000/order?_sort=id&_order=desc"
+        var htmldata=""
+        axios.get(url)
+          .then(function (response) {
+            var htmldata=""
+            var listdata = response.data
+            listdata.forEach(elements=>{
+                var price =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.total_price)
+                 htmldata+=`
+                <tr>
+                    <th scope="row">${elements.id}</th>
+                    <td>${elements.fullname}</td>
+                    <td>${elements.phone}</td>
+                    <td>${elements.address}</td>
+                    <td>${elements.email}</td>
+                    <td>${price}</td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success" onclick="chitiet(${elements.id})">Xem chi tiết</button>
+                    
+                       
+                    </td>
+
+                </tr>`
+            })
+            document.querySelector("#list_data").innerHTML=htmldata
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          // lấy chi tiết sản phẩm
+
+          function chitiet(id){
+           var urlchitiet = "http://localhost:3000/order_detail?orderID="+id
+                axios.get(urlchitiet)
+              .then(function (response) {
+               var listsporder = response.data
+               var listGetDataApi=[]
+               listsporder.forEach(elements=>{
+                var idsp = elements.productsID
+                var urlsp = "http://localhost:3000/products/"+idsp
+                var promise = axios.get(urlsp);
+                listGetDataApi.push(promise)
+               });
+                showchitietsp(listGetDataApi,listsporder)
+              })
+          }
+
+          function showchitietsp(listGetDataApi,listsporder){
+
+            var htmllistsp=""
+               Promise.all(listGetDataApi).then(function(data) {
+                    data.forEach(elements=>{
+                    listsporder.forEach(elements1=>{
+                    if(elements.data.id==elements1.productsID){
+                    elements.data.sl=elements1.amount
+                    }
+                    })
+                    })
+                     console.log(data)
+                data.forEach(elements=>{
+                var totalgia =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.data.sale*elements.data.sl)
+                var sale =new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(elements.data.sale)
+                     htmllistsp+=`
+                     <tr>
+                      <th scope="row">${elements.data.name_product}</th>
+                      <td><img src="${elements.data.images}"></td>
+                      <td>${sale}</td>
+                      <td>${elements.data.sl}</td>
+                      <td>${totalgia}</td>
+                    </tr>
+                    `
+                })
+                document.querySelector("#listsp").innerHTML = htmllistsp
+                });          
+           }
+        </script>
+    </body>
+</html>
