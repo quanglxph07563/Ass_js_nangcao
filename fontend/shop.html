@@ -48,6 +48,12 @@ URL: https://www.freshdesignweb.com/ustora/
         .single-shop-product h2{
         height: 45px
         }
+        #phantrang li a{
+            cursor: pointer;
+        }
+        .activept{
+            background-color: #6ff1e5 !important;
+        }
         </style>
     </head>
     <body>
@@ -192,22 +198,8 @@ URL: https://www.freshdesignweb.com/ustora/
                                 <div class="col-md-12">
                                     <div class="product-pagination text-center">
                                         <nav>
-                                            <ul class="pagination">
-                                                <li>
-                                                    <a href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo;</span>
-                                                    </a>
-                                                </li>
-                                                <li><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">4</a></li>
-                                                <li><a href="#">5</a></li>
-                                                <li>
-                                                    <a href="#" aria-label="Next">
-                                                        <span aria-hidden="true">&raquo;</span>
-                                                    </a>
-                                                </li>
+                                            <ul class="pagination" id="phantrang">
+                                               
                                             </ul>
                                         </nav>
                                     </div>
@@ -311,14 +303,33 @@ URL: https://www.freshdesignweb.com/ustora/
                     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                     <!--  start get data -->
                     <script>
-                    
-                    var url = "http://localhost:3000/products"
+                    const limit = 4
+                    var countproduct = 0
+                    var page =1
+                    function getdata(page,index){
+                    var url = "http://localhost:3000/products?_page="+page+"&_limit="+limit
                     $.ajax({
                     method:"GET",
                     url: url,
                     }).done(function(data) {
-                    showdata(data)
-                    
+                     showdata(data)
+                     acivephantrang(index)
+                    });
+                   }
+                   getdata()
+
+                    // get all product - > length
+                    var urlall = "http://localhost:3000/products"
+                    $.ajax({
+                    method:"GET",
+                    url: urlall,
+                    }).done(function(data) {
+                   
+                    countproduct = data.length
+
+                    countpage =Math.ceil(countproduct/limit)
+                     console.log(countpage)
+                    phantrang(countpage)
                     });
                     </script>
                     <!--  end get data -->
@@ -409,7 +420,45 @@ URL: https://www.freshdesignweb.com/ustora/
                         // always executed
                         });
                         }
-
+                        // phân trang
+                        function phantrang(count){
+                            console.log(count)
+                            var htmlpt=` <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    `
+                            for (let i = 1; i <= count; i++) {
+                                if(i==1){
+                                    htmlpt+=`       
+                                <li><a class="activephantrang activept" onclick="getdata(${i},this)">${i}</a></li>
+                                `
+                                }else {
+                                     htmlpt+=`       
+                                <li><a class="activephantrang" onclick="getdata(${i},this)">${i}</a></li>
+                                `
+                                }
+                               
+                            }
+                            htmlpt+=`                
+                              <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>`
+                            document.querySelector("#phantrang").innerHTML = htmlpt
+                        }
+                        function acivephantrang(index){
+                           var listactive = document.getElementsByClassName("activephantrang")
+                           for (var i = 0; i <listactive.length; i++) {
+                            if(listactive[i].classList.contains("activept")){
+                               listactive[i].classList.remove("activept")
+                            }
+                            // console.log(listactive[i])
+                           }
+                           index.classList.add("activept");
+                        }
                     </script>
                     <!--  start add san pham vao gio hang -->
                     <script src="./js/add_sp.js"></script>

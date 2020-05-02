@@ -190,6 +190,22 @@
       "email": "vuthanhnam@gmail.com",
       "total_price": 126470000,
       "id": 4
+    },
+    {
+      "fullname": "111111111111111",
+      "phone": "0395749099",
+      "address": "111111111111",
+      "email": "quang268200@gmail.com",
+      "total_price": 19990000,
+      "id": 5
+    },
+    {
+      "fullname": "Lê Minh Chiến",
+      "phone": "0395749099",
+      "address": "đồng vân đồng tháp đan phượng hà nội",
+      "email": "chien@gmail.com",
+      "total_price": 248270000,
+      "id": 6
     }
   ],
   "order_detail": [
@@ -246,6 +262,30 @@
       "amount": 2,
       "orderID": 4,
       "id": 10
+    },
+    {
+      "productsID": 2,
+      "amount": 1,
+      "orderID": 5,
+      "id": 11
+    },
+    {
+      "productsID": 3,
+      "amount": 13,
+      "orderID": 6,
+      "id": 12
+    },
+    {
+      "productsID": 2,
+      "amount": 1,
+      "orderID": 6,
+      "id": 13
+    },
+    {
+      "productsID": 1,
+      "amount": 2,
+      "orderID": 6,
+      "id": 14
     }
   ],
   "contact": [

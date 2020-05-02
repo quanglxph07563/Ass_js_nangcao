@@ -20,6 +20,18 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <style>
+    .d-inline-block {
+        width: 50px;
+    }
+
+    .round-lg {
+        line-height: 65px;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+</style>
     </head>
     <body>
         <!-- ============================================================== -->
@@ -224,42 +236,128 @@
                 <!-- ============================================================== -->
                 <!-- Container fluid  -->
                 <!-- ============================================================== -->
-                <div class="container-fluid">
-                    <!-- ============================================================== -->
-                    <!-- Email campaign chart -->
-                    <!-- ============================================================== -->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Họ Tên </th>
-                                    <th scope="col">Địa chỉ</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Nội Dung</th>
-                                </tr>
-                            </thead>
-                            <tbody id="list_data">
-                                <!--     <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning">Xóa</button>
-                                        <button type="button" class="btn btn-success">Sửa</button>
-                                    </td>
-                                </tr> -->
-                                
-                            </tbody>
-                        </table>
+            <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <!-- Column -->
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                    	 <a href="index.html">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                   
+                                        <div class="round round-lg text-white d-inline-block text-center rounded-circle bg-warning">
+                                            <i class="mdi mdi-city"></i></div>
+                                   
+                                    <div class="ml-2 align-self-center">
+                                        <h3 class="mb-0 font-weight-light" id="sanpham"></h3>
+                                        <h5 class="text-muted mb-0">Số sản phẩm </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         </a>
                     </div>
-                    <!-- ============================================================== -->
-                    <!-- Recent comment and chats -->
-                    <!-- ============================================================== -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                    	 <a href="danhmuc.html">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                   
+                                        <div class="round round-lg text-white d-inline-block text-center rounded-circle bg-info">
+                                            <i class="mdi mdi-hospital-building"></i>
+                                        </div>
+                                    
+                                    <div class="ml-2 align-self-center">
+                                        <h3 class="mb-0 font-weight-light" id="danhmuc"></h3>
+                                        <h5 class="text-muted mb-0">Danh mục</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                    	<a href="donhang.html">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    
+                                        <div class="round round-lg text-white d-inline-block text-center rounded-circle bg-primary">
+                                            <i class="mdi mdi-cart-outline"></i></div>
+                                   
+                                    <div class="ml-2 align-self-center">
+                                        <h3 class="mb-0 font-weight-light" id="donhang"></h3>
+                                        <h5 class="text-muted mb-0">Đơn hàng</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         </a>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+
+                    <div class="col-lg-3 col-md-6">
+                    	 <a href="lienhe.html">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                   
+                                        <div class="round round-lg text-white d-inline-block text-center rounded-circle bg-danger">
+                                            <i class="mdi mdi-face"></i></div>
+                                  
+                                    <div class="ml-2 align-self-center">
+                                        <h3 class="mb-0 font-weight-light" id="lienhe"></h3>
+                                        <h5 class="text-muted mb-0">Liên hệ</h5>
+                                    </div>
+                                </div>
+                            </div>
+                              </a>
+                        </div>
+                    </div>
+                       <div class="col-lg-3 col-md-6">
+                       	<a href="baiviet.html">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    
+                                        <div class="round round-lg text-white d-inline-block text-center rounded-circle bg-success">
+                                            <i class="mdi mdi-newspaper"></i></div>
+                                    
+                                    <div class="ml-2 align-self-center">
+                                        <h3 class="mb-0 font-weight-light" id="baiviet"></h3>
+                                        <h5 class="text-muted mb-0">Bài viết</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Column -->
                 </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->
@@ -303,30 +401,26 @@
         <script src="./dist/js/pages/dashboards/dashboard1.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <script>
-        
-        // get data contact
-        var urllh = "http://localhost:3000/contact?_sort=id&_order=desc"
-        var htmldata=""
-        axios.get(urllh)
-        .then(function (response) {
-        listdata = response.data
-        console.log(listdata)
-        listdata.forEach(elements=>{
-        htmldata+=`
-        <tr>
-            <th scope="row">${elements.id}</th>
-            <td>${elements.name}</td>
-            <td>${elements.address}</td>
-            <td>${elements.email}</td>
-            <td>${elements.content}</td>
-        </tr>`
-        })
-        document.querySelector("#list_data").innerHTML=htmldata
-        })
-        .catch(function (error) {
-        console.log(error);
-        });
-        </script>
+<script type="text/javascript">
+	var urlsp = "http://localhost:3000/products"
+	var urldanhmuc = "http://localhost:3000/category"
+	var urldonhang = "http://localhost:3000/order"
+	var urllienhe = "http://localhost:3000/contact"
+	var urlbaiviet = "http://localhost:3000/posts"
+
+	const promise1 = axios.get(urlsp);
+	const promise2 = axios.get(urldanhmuc);
+	const promise3 = axios.get(urldonhang);
+	const promise4 = axios.get(urllienhe);
+	const promise5 = axios.get(urlbaiviet);
+
+	Promise.all([promise1, promise2, promise3, promise4, promise5]).then(function(values) {
+	document.querySelector("#sanpham").innerHTML = values[0].data.length
+	document.querySelector("#danhmuc").innerHTML = values[1].data.length
+	document.querySelector("#donhang").innerHTML = values[2].data.length
+	document.querySelector("#lienhe").innerHTML = values[3].data.length
+	document.querySelector("#baiviet").innerHTML = values[4].data.length
+	});
+</script>
     </body>
 </html>
