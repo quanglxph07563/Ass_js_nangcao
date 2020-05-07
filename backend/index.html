@@ -320,14 +320,17 @@
         axios.get(urldm)
           .then(function (response) {
             listdatadm = response.data
+            showsp()
+
           })
           .catch(function (error) {
             console.log(error);
           });
         // get data sản phảma
-        var url = "http://localhost:3000/products?_sort=id&_order=desc"
-        var htmldata=""
-        axios.get(url)
+       function showsp(){
+
+         var urlsp = "http://localhost:3000/products?_sort=id&_order=desc"
+         axios.get(urlsp)
           .then(function (response) {
             var htmldata=""
             var listdata = response.data
@@ -362,6 +365,7 @@
           .catch(function (error) {
             console.log(error);
           });
+       }
 
 
           function xoaSp(elements,id){

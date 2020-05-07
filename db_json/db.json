@@ -206,6 +206,22 @@
       "email": "chien@gmail.com",
       "total_price": 248270000,
       "id": 6
+    },
+    {
+      "fullname": "quangchien",
+      "phone": "0123456789",
+      "address": "đồng vân đồng tháp đan phượng hà nội",
+      "email": "quanglxph07563@fpt.edu.vn",
+      "total_price": 36190000,
+      "id": 7
+    },
+    {
+      "fullname": "Trần Văn Vũ",
+      "phone": "0981711200",
+      "address": "đồng vân đồng tháp đan phượng hà nội",
+      "email": "quanglxph07563@fpt.edu.vn",
+      "total_price": 147750000,
+      "id": 8
     }
   ],
   "order_detail": [
@@ -286,6 +302,36 @@
       "amount": 2,
       "orderID": 6,
       "id": 14
+    },
+    {
+      "productsID": 4,
+      "amount": 1,
+      "orderID": 7,
+      "id": 15
+    },
+    {
+      "productsID": 1,
+      "amount": 1,
+      "orderID": 7,
+      "id": 16
+    },
+    {
+      "productsID": "1",
+      "amount": 4,
+      "orderID": 8,
+      "id": 17
+    },
+    {
+      "productsID": 2,
+      "amount": 1,
+      "orderID": 8,
+      "id": 18
+    },
+    {
+      "productsID": 5,
+      "amount": 1,
+      "orderID": 8,
+      "id": 19
     }
   ],
   "contact": [
